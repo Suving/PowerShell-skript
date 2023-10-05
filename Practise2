@@ -1,0 +1,31 @@
+# Skripti algus
+
+# Luua Hashtable 1
+$Hashtable1 = @{
+    "John" = 12
+    "Joe" = 20
+    "Mary" = 18
+}
+
+# Luua Hashtable 2
+$Hashtable2 = @{
+    "John" = 100
+    "Joe" = 120
+    "Mary" = 150
+}
+
+# Luua tühi Hashtable 3
+$Hashtable3 = @{}
+
+# Kalkuleerida Hashtable 3 korrutades arvud, mis on Hashtable 1 ja Hashtable 2
+foreach ($name in $Hashtable1.Keys) {
+    $DaysWorked = $Hashtable1[$name]
+    $SalaryPerDay = $Hashtable2[$name]
+    $TotalSalary = $DaysWorked * $SalaryPerDay
+    $Hashtable3[$name] = $TotalSalary
+}
+
+# Näidata Hashtable 3
+$Hashtable3
+
+# Skripti l6pp
