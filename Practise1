@@ -1,0 +1,19 @@
+# Skript algus
+
+# Luua Array1 ja Array2
+$Array1 = @(1, 2, 3)
+$Array2 = @(4, 5, 6)
+
+# Luua tühi Array3
+$Array3 = @()
+
+# Arvutada vastavate väärtuste summa Array1 ja Array2 ja viia neid Array3
+for ($i = 0; $i -lt $Array1.Length; $i++) {
+    $sum = $Array1[$i] + $Array2[$i]
+    $Array3 += $sum
+}
+
+# Näidata tulemus Array3
+$Array3
+
+#Skripti l6pp
