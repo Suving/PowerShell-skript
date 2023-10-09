@@ -1,0 +1,23 @@
+# Skripti algus
+
+# CSV faili importeerimine
+$students = Import-Csv -Path "C:\(kaust)\(kust)\(faili_nimi.csv)"
+
+# Loob uue veergu "Kool", mis põhineb vanusevahemikul.
+$students | ForEach-Object {
+    if ($_.Age -ge 4 -and $_.Age -le 10) {
+        $_ | Add-Member -MemberType NoteProperty -Name 'Kool' -Value 'Nooruk'
+    } elseif ($_.Age -ge 11 -and $_.Age -le 17) {
+        $_ | Add-Member -MemberType NoteProperty -Name 'Kool' -Value 'Senior'
+    } else {
+        $_ | Add-Member -MemberType NoteProperty -Name 'Kool' -Value 'Teadmatu'
+    }
+}
+
+# Tulemuse tabeli kuvamine
+$students
+
+# Eksporteerib tabel uude CSV-faili
+$students | Export-Csv -Path "C:\path\to\students_with_school.csv" -NoTypeInformation
+
+# Skripti l6pp
