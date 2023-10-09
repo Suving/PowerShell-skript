@@ -1,0 +1,29 @@
+# Skripti algus
+
+# Määrab hashtable riigi ja pealinna paaridega
+$countryCapitals = @{
+    "1" = "Prantsusmaa - Pariis"
+    "2" = "Saksamaa - Berliin"
+    "3" = "Hispaania - Barcelona"
+    "4" = "Itaalia - Rooma"
+    "5" = "Ühinenud Kuningriigid - London"
+}
+
+# Menüü kuvamine
+Write-Host "Valige riik:"
+foreach ($key in $countryCapitals.Keys) {
+    Write-Host "$key. $($countryCapitals[$key])"
+}
+
+# Palub kasutajal valida riik
+$choice = Read-Host "Sisestage riigi number: "
+
+# Kontrollib, kas valik on kehtiv, ja kuvab vastav pealinn
+if ($countryCapitals.ContainsKey($choice)) {
+    $capital = $countryCapitals[$choice]
+    Write-Host "Pealinnaks $capital"
+} else {
+    Write-Host "Invalid choice. Please select a valid number."
+}
+
+# Skripti lõpp
