@@ -1,0 +1,18 @@
+# Skripti algus
+
+# Küsib kasutajalt esimest väärtust
+$value1 = Read-Host "Sisestage esimene arv"
+
+# Küsib kasutajalt teist väärtust
+$value2 = Read-Host "Sisestage teine arv"
+
+# Võrdleb kahte väärtust ja näitab suuremat arvu
+if ($value1 -gt $value2) {
+    Write-Host "The higher number is : $value1"
+} elseif ($value1 -lt $value2) {
+    Write-Host "The higher number is : $value2"
+} else {
+    Write-Host "Both numbers are equal."
+}
+
+#Skripti l6pp
