@@ -1,0 +1,25 @@
+# Skripti algus
+
+# Määrab õpilaste nimekirjade numbrite massiivi (1 - 20)
+$students = 1..20
+
+# Määrab grupi värvide massiivi
+$colors = "Red", "Green", "Yellow", "Blue"
+
+# Tulemuste salvestamiseks tühja massiivi initsialiseerimine
+$results = @()
+
+# Loop läbi iga õpilase ja määrata juhusliku värvi
+foreach ($student in $students) {
+    $randomColor = Get-Random -InputObject $colors
+    $result = [PSCustomObject]@{
+        RollNumber = $student
+        Group = $randomColor
+    }
+    $results += $result
+}
+
+# Tulemuse tabeli kuvamine
+$results
+
+# Skripti l6pp
