@@ -1,0 +1,12 @@
+# Skripti algus
+
+# Küsimuse küsimine
+Write-Host "Mis on sinu nimi" -NoNewline
+
+# Loe kasutaja antud vastust
+$answer = Read-Host
+
+# Kuvada vastus rohelise värviga
+Write-Host "Sa sisestasid: $answer" -ForegroundColor Green
+
+# Skripti l6pp
