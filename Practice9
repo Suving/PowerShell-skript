@@ -23,6 +23,6 @@ do {
 } while ($true)
 
 Write-Host "Kõik Notepad'i instantsid on suletud."
-Write-Host "Kuvati teade "Notepad töötab". $counter korda."
+Write-Host "Rakendus Avaldus "Notepad töötab" kuvab $counter korda."
 
 # Skripti l6pp
