@@ -1,0 +1,14 @@
+# Skripti algus
+
+function Get-ServiceCount {
+    $runningServices = (Get-Service | Where-Object { $_.Status -eq "Running" }).Count
+    $stoppedServices = (Get-Service | Where-Object { $_.Status -eq "Stopped" }).Count
+
+    Write-Host "Jooksvad teenused kokku: $runningServices"
+    Write-Host "Lõpetatud teenused kokku: $stoppedServices"
+    Write-Host "Teenused kokku: $($runningServices + $stoppedServices)"
+}
+
+Get-ServiceCount
+
+# Skripti l6pp
