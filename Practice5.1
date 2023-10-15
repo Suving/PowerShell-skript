@@ -1,0 +1,10 @@
+# Skripti algus
+
+# Avab kaks Notepad'i instantsi
+Start-Process notepad
+Start-Process notepad
+
+# Hankib Notepad'i protsesside nimekirja ja kuvab protsessi nimi ja ID.
+Get-Process | Where-Object { $_.ProcessName -eq "notepad" } | Select-Object ProcessName, Id
+
+# Skripti l6pp
