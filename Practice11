@@ -1,0 +1,33 @@
+# Skripti algus
+
+# Palub kasutajalt sisestada kaks numbrit
+$number1 = Read-Host "Sisestage esimene number"
+$number2 = Read-Host "Sisestage teine number"
+
+# Menüü kuvamine tegevuse valimiseks
+Write-Host "Valige numbritega tehtav toiming:"
+Write-Host "1. Liitmine"
+Write-Host "2. Lahutamine"
+Write-Host "3. Korrutamine"
+Write-Host "4. Jagamine"
+
+# Palub kasutajat valiku tegemiseks
+$action = Read-Host "Sisestage oma valikule vastav number"
+
+# Valitud toimingu sooritamine
+switch ($action) {
+    1 { $result = $number1 + $number2; Write-Host "Tulemus: $result" }
+    2 { $result = $number1 - $number2; Write-Host "Tulemus: $result" }
+    3 { $result = $number1 * $number2; Write-Host "Tulemus: $result" }
+    4 { $result = $number1 / $number2; Write-Host "Tulemus: $result" }
+        if ($number2 -eq 0) {
+            Write-Host "ERROR"
+        } else {
+            $result = $number1 / $number2
+            Write-Host "Tulemus: $result"
+        }
+    }
+    default { Write-Host "Vale valik. Palun valige sobiv valik." }
+}
+
+# Skripti l6pp
