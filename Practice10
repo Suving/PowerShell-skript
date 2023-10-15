@@ -1,0 +1,28 @@
+# Skripti algus
+
+$notepadCount = 3
+$counter = 0
+
+# Käivitab 3 Notepad'i instantsi
+1..$notepadCount | ForEach-Object {
+    Start-Process notepad
+}
+
+# Do-until loop kontrollib, kas Notepad ei tööta
+do {
+    $runningNotepads = Get-Process | Where-Object { $_.ProcessName -eq "notepad" }
+
+    if ($runningNotepads.Count -gt 0) {
+        Write-Host "Notepad töötab"
+        $counter++
+        Start-Sleep -Seconds 1
+    } else {
+        # Kui kõik Notepad'i instantsid on suletud
+        break
+    }
+} until ($false)
+
+Write-Host "Kõik Notepad'i instantsid on suletud."
+Write-Host "Avaldus 'Notepad töötab' kuvati $counter korda."
+
+# Skripti l6pp
