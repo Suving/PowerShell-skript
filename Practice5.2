@@ -1,0 +1,29 @@
+# Skripti algus
+
+# Loob kausta C:\Temp\Test, kui seda ei ole olemas.
+New-Item -Path "C:\Temp\Test" -ItemType Directory -ErrorAction SilentlyContinue
+
+# Kopeerib näidisfailid kausta
+Copy-Item -Path "Path\to\sample.csv" -Destination "C:\Temp\Test" -Force
+Copy-Item -Path "Path\to\sample1.txt" -Destination "C:\Temp\Test" -Force
+Copy-Item -Path "Path\to\sample2.txt" -Destination "C:\Temp\Test" -Force
+
+# Loetleb kaustas olevad failid
+$files = Get-ChildItem -Path "C:\Temp\Test"
+
+# Näitab kaustas olevate failide koguarvu
+Write-Host "Kaustas olevad failid kokku: $($files.Count)"
+
+# CSV-faili suuruse leidmine ja kuvamine KB ja MB suuruses
+$csvFile = $files | Where-Object { $_.Extension -eq ".csv" }
+
+if ($csvFile) {
+    $sizeKB = [math]::Round($csvFile.Length / 1KB, 2)
+    $sizeMB = [math]::Round($csvFile.Length / 1MB, 2)
+    Write-Host "CSV faili suurus (KB): $sizeKB KB"
+    Write-Host "CSV faili suurus (MB): $sizeMB MB"
+} else {
+    Write-Host "CSV-faili ei leitud kaustas."
+}
+
+# Skripti l6pp
