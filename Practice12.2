@@ -1,0 +1,19 @@
+# Skripti algus
+
+function Get-ServiceCountWithFilter {
+    param (
+        [string]$status
+    )
+
+    $filteredServices = (Get-Service | Where-Object { $_.Status -eq $status }).Count
+
+    Write-Host "Teenused $status kokku: $filteredServices"
+}
+
+# Kutsub funktsioon "Running" staatusega
+Get-ServiceCountWithFilter -status "Running"
+
+# Kutsub funktsioon "Stopped" staatusega
+Get-ServiceCountWithFilter -status "Stopped"
+
+# Skripti l6pp
